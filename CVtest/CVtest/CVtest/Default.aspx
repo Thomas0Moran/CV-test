@@ -5,10 +5,9 @@
     <div class="row">
         <div class="col-md-8">
             <h5>¿quien soy?</h5>
-            <img class="img-fluid" src="img/MyAvatar.png"/ style= width: 50px; height: 50px;
->
+            <img class="img-fluid" src="img/MyAvatar.png"/>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <asp:Button runat="server" Text="Leer mas+" cssClass="btn btn-info" />
+            <a href="MasInformacion/QuienSoy.aspx" Class="btn btn-info">Leer mas+</a>
         </div>
         <div class="col-md-4">
             <h5>¿a que me dedico?</h5>
