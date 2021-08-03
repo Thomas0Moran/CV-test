@@ -14,7 +14,7 @@
     <hr />
     <h5>Contador de variables con Cookies</h5>
     <asp:Label runat="server" ID="iblContadorCookies">0</asp:Label><br />
-    <asp:Button runat="server" ID="btnContarCookies" CssClass="btn btn-primary" Text="Incrementar (DESACTIVADO*error*)" OnClick="btnContarCookies_Click" />
+    <asp:Button runat="server" ID="btnContarCookies" CssClass="btn btn-primary" Text="Incrementar (con Cookies*)" OnClick="btnContarCookies_Click" />
     <hr />
 
 
