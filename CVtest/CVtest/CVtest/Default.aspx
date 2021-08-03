@@ -12,7 +12,7 @@
         <div class="col-md-6">
             <h5>¿a que me dedico?</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim praesent elementum facilisis leo vel fringilla est ullamcorper. Ullamcorper morbi tincidunt ornare massa. Risus pretium quam vulputate dignissim suspendisse in est ante in. Neque convallis a cras semper auctor. Lorem ipsum dolor sit amet consectetur adipiscing. Morbi non arcu risus quis varius. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque.Natoque penatibus et magnis dis. Sapien eget mi proin sed libero enim. In iaculis nunc sed augue lacus viverra. Eget lorem dolor sed viverra. Dignissim convallis aenean et tortor at risus viverra adipiscing at. In nibh mauris cursus mattis molestie a iaculis. Auctor eu augue ut lectus arcu bibendum at varius. </p>
-            <a href="MasInformacion/QuienSoy.aspx" class="btn btn-info">Leer mas+</a>
+            <a href="MasInformacion/Ocupacion/Default.aspx" class="btn btn-info">Leer mas+</a>
         </div>
     </div>
 
