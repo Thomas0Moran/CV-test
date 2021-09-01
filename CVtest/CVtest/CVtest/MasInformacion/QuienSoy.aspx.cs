@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
+using Negocio;
 
 
 namespace CVtest.MasInformación
 {
     public partial class QuienSoy : System.Web.UI.Page
     {
-        private List<Comentario> comentarios;
+        private static ComentarioNegocio comentarioNegocio = new ComentarioNegocio();
 
         public QuienSoy()
         {
@@ -20,17 +21,17 @@ namespace CVtest.MasInformación
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(ViewState["comentarios"]== null)
-            {
-                comentarios = new List<Comentario>();
-                ViewState["comentarios"] = comentarios;
-            }
-            else
-            {
-                comentarios = (List<Comentario>) ViewState["comentarios"];
-            }
+            //if(ViewState["comentarios"]== null)
+            //{
+            //    comentarios = new List<Comentario>();
+            //    ViewState["comentarios"] = comentarios;
+            //}
+            //else
+            //{
+            //    comentarios = (List<Comentario>) ViewState["comentarios"];
+            //}
 
-            lstComentarios.DataSource = comentarios;
+            lstComentarios.DataSource = comentarioNegocio.ObtenerComentarios();
             lstComentarios.DataBind();
         }
 
@@ -45,11 +46,9 @@ namespace CVtest.MasInformación
                 Texto = comentario
             };
 
-            comentarios.Add(nuevoComentario);
-            ViewState["comentarios"] = comentarios;
+            bool resultado = comentarioNegocio.GuardarComentario(nuevoComentario);
 
-            txtComentario.Text = "";
-            txtNombre.Text = "";
+            lstComentarios.DataSource = comentarioNegocio.ObtenerComentarios();
             lstComentarios.DataBind();
         }
     }

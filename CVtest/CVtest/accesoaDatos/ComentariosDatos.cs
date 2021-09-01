@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,21 +10,27 @@ namespace accesoaDatos
 {
     public class ComentariosDatos
     {
-        public List<Comentario> comentarios;
+        private SqlConnection conexion = new SqlConnection("Server=DESKTOP-L0FHG61;Database=MiSitioPersonal;Trusted_Connection=True;");
 
         public ComentariosDatos()
         {
-            comentarios = new List<Comentario>();
+            //comentarios = new List<Comentario>();
         }
 
-        public void AgregaComentario(Comentario comentario)
+        public void AgregarComentario (Comentario comentario)
         {
-            comentarios.Add(comentario);
+            //comentarios.Add(comentario);
         }
 
         public List<Comentario> ObtenerComentarios()
         {
-            return comentarios;
+            string consulta = @"SELECT Id, Nombre,Texto FROM Comentarios";
+
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            conexion.Open();
+            SqlDataReader reader = comando.ExecuteReader();
+
+            conexion.Close();
         }
 
     }

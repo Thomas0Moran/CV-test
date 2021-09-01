@@ -51,7 +51,7 @@
       <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\accesoaDatos\accesoaDatos.csproj">
-      <Project>{fad1ebba-3108-48f0-a339-cf949c9fa714}</Project>
+      <Project>{FAD1EBBA-3108-48F0-A339-CF949C9FA714}</Project>
       <Name>accesoaDatos</Name>
     </ProjectReference>
   </ItemGroup>
