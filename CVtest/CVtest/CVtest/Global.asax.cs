@@ -12,7 +12,8 @@ namespace CVtest
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            int[,] matriz = new int[3, 3];
+            Console.WriteLine(matriz.GetLength(0));
         }
 
         protected void Session_Start(object sender, EventArgs e)

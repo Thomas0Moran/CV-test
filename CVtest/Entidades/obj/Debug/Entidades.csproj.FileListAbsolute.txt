@@ -1,0 +1,5 @@
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\Entidades\bin\Debug\Entidades.dll
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\Entidades\obj\Debug\Entidades.dll
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\Entidades\obj\Debug\Entidades.pdb

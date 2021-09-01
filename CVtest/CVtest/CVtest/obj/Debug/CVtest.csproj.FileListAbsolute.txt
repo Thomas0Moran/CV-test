@@ -57,3 +57,7 @@ C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\CVtest\CVtest\obj\Debug\CVtest.csproj
 C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\CVtest\CVtest\obj\Debug\CVtest.dll
 C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\CVtest\CVtest\obj\Debug\CVtest.pdb
 C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\CVtest\CVtest\obj\Debug\CVtest.csproj.AssemblyReference.cache
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\CVtest\CVtest\bin\Entidades.dll
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\CVtest\CVtest\bin\Entidades.pdb
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\CVtest\CVtest\bin\Negocio.dll
+C:\Users\Tom\Desktop\CVtest\CV-test\CVtest\CVtest\CVtest\bin\Negocio.pdb
