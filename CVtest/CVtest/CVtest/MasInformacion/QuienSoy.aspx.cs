@@ -21,16 +21,6 @@ namespace CVtest.MasInformación
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(ViewState["comentarios"]== null)
-            //{
-            //    comentarios = new List<Comentario>();
-            //    ViewState["comentarios"] = comentarios;
-            //}
-            //else
-            //{
-            //    comentarios = (List<Comentario>) ViewState["comentarios"];
-            //}
-
             lstComentarios.DataSource = comentarioNegocio.ObtenerComentarios();
             lstComentarios.DataBind();
         }
@@ -47,6 +37,9 @@ namespace CVtest.MasInformación
             };
 
             bool resultado = comentarioNegocio.GuardarComentario(nuevoComentario);
+
+            txtComentario.Text = "";
+            txtNombre.Text = "";
 
             lstComentarios.DataSource = comentarioNegocio.ObtenerComentarios();
             lstComentarios.DataBind();
