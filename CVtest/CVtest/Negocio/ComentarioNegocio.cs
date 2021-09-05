@@ -23,11 +23,10 @@ namespace Negocio
              * valida si es: null, vacio o esta compuesto solo por espacios
              */
 
-            if (string.IsNullOrWhiteSpace(comentario.Nombre) == false && 
+            if (string.IsNullOrWhiteSpace(comentario.Nombre) == false &&
                 string.IsNullOrWhiteSpace(comentario.Texto) == false)
             {
                 resultado = comentariosDatos.AgregarComentario(comentario);
-                
             }
 
             return resultado;
@@ -36,6 +35,11 @@ namespace Negocio
         public List<Comentario> ObtenerComentarios()
         {
             return comentariosDatos.ObtenerComentarios();
+        }
+
+        public bool BorrarComentario(int id)
+        {
+            return comentariosDatos.BorrarComentario(id);
         }
     }
 }

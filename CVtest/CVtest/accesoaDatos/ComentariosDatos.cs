@@ -1,30 +1,34 @@
 ﻿using Entidades;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AccesoDatos
 {
     public class ComentariosDatos
     {
-        private SqlConnection conexion = new SqlConnection("Server=DESKTOP-95LI9O3;Database=MiSitioPersonal;Trusted_Connection=True;");
+        private string cadena = "Server=DESKTOP-L0FHG61;Database=MiSitioPersonal;Trusted_Connection=True;";
+
         public ComentariosDatos()
         {
-            //comentarios = new List<Comentario>();
         }
 
         public bool AgregarComentario(Comentario comentario)
         {
-            string consulta = $@"INSERT INTO Comentarios (Nombre,Texto) VALUES('{comentario.Nombre}','{comentario.Texto}')";
-
-            SqlCommand comando = new SqlCommand(consulta, conexion);
-            conexion.Open();
-            int resultado = comando.ExecuteNonQuery();
-            conexion.Close();
-            if (resultado ==1)
+            string consulta = $@"INSERT INTO Comentarios(Nombre,Texto)
+                    VALUES ('{comentario.Nombre}','{comentario.Texto}')
+                    ";
+            int resultado;
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            {
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    resultado = comando.ExecuteNonQuery();
+                    
+                }
+            }
+            
+            if (resultado == 1)
             {
                 return true;
             }
@@ -41,27 +45,102 @@ namespace AccesoDatos
             string consulta = @"SELECT Id,Nombre,Texto 
                                 FROM ComenTarios";
 
-
-            SqlCommand comando = new SqlCommand(consulta, conexion);
-            conexion.Open();
-            SqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            using(SqlConnection conexion = new SqlConnection(cadena))
             {
-                Comentario comentario = new Comentario()
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                SqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    Nombre = reader.GetString(1),
-                    Texto = reader["Texto"].ToString()
-                };
+                    Comentario comentario = new Comentario()
+                    {
+                        Id = reader.GetInt32(0),
+                        Nombre = reader.GetString(1),
+                        Texto = reader["Texto"].ToString()
+                    };
 
-                resultado.Add(comentario);
-
+                    resultado.Add(comentario);
+                }
             }
-
-            conexion.Close();
+            
 
             return resultado;
         }
 
+        public bool BorrarComentario(int id)
+        {
+            string consulta = $@"DELETE FROM Comentarios
+                                WHERE Id={id}";
+
+            int resultado;
+            using(SqlConnection conexion = new SqlConnection(cadena))
+            {
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                resultado = comando.ExecuteNonQuery();
+            }
+
+            if (resultado == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarComentario(Comentario comentario)
+        {
+            string consulta = $@"UPDATE Comentarios
+                                SET Nombre='{comentario.Nombre}', Texto='{comentario.Texto}'
+                                WHERE Id={comentario.Id}";
+
+            int resultado;
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            {
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                resultado = comando.ExecuteNonQuery();
+            }
+
+            if (resultado == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Comentario ObtenerComentario(int id)
+        {
+            Comentario resultado = null;
+
+            string consulta = $@"SELECT Id,Nombre,Texto 
+                                FROM ComenTarios WHERE Id={id}";
+
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            {
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                SqlDataReader reader = comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    resultado = new Comentario()
+                    {
+                        Id = reader.GetInt32(0),
+                        Nombre = reader.GetString(1),
+                        Texto = reader["Texto"].ToString()
+                    };
+                }
+            }
+
+
+            return resultado;
+        }
     }
 }
