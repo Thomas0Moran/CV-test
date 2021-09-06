@@ -15,10 +15,11 @@
              </LayoutTemplate>
 
              <ItemTemplate>
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                <div class="card-body">
                 <h5 class="card-title"><%#Eval("Nombre") %></h5>
                 <p class="card-text"><%#Eval("Texto") %></p>
+                <a href ="/MasInformacion/BorrarComentarios.aspx?id=<%#Eval("id")%>" class="btn btn-danger">Borar</a>
                </div>
               </div>
              </ItemTemplate>

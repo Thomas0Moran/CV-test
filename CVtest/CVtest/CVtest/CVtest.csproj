@@ -78,6 +78,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\myAvatar.png" />
+    <Content Include="MasInformacion\BorrarComentario.aspx" />
     <Content Include="MasInformacion\Ocupacion\Default.aspx" />
     <Content Include="MasInformacion\QuienSoy.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasInformacion\BorrarComentario.aspx.cs">
+      <DependentUpon>BorrarComentario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasInformacion\BorrarComentario.aspx.designer.cs">
+      <DependentUpon>BorrarComentario.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasInformacion\Ocupacion\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
